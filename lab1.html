@@ -6,18 +6,50 @@
 
   <body>
     <h1> IT-2320 - Lab 1: Language Constructs </h1>
-
-    <h2> Student Name: Angelica A. Hall </h2>
+    
+    <h2> Student Name: Angelica Alexis Hall </h2>
   
-    <p>
-      Output:
-      Values:
-      Sum:
-    </p>
+    <div id="output"> </div>
+    <div id="values"> </div> 
+    <div id="sum"> </div>
 
     <script>
-      /* Author = Angelica
-      Class = IT-2320 */
+      /* 
+      Author = Angelica Alexis Hall
+      Class = IT-2320 
+      */
+
+      let name = "Angelica Alexis Hall";
+      document.write("Lab 1. Completed by " + name);
+
+      console.log("Note: Lab 1. Completed by " + name);
+
+      document.getElementById("output").innerHTML = "innerHTML value set";
+
+      let values = "";
+      for (let x = 1; x <= 10; x++) {
+        values += x + "<br>";
+      }
+      document.getElementById("values").innerHTML = values;
+      
+      let sum = 0;
+      let y = 1;
+      while (y <= 10) {
+        sum += y;
+        y++;
+      }
+      document.getElementById("sum").innerHTML = sum;
+
+      let a = 30;
+      let b = 59;
+      let c = 70;
+      document.write(a + b + c + "<br>");
+
+      if (a < b) {
+        document.write("a < b"); 
+      } else {
+        document.write("a > b");
+      }
     </script>
   </body>
   
