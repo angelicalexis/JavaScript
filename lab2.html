@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> IT-2320 - Lab 1 </title>
+
+    <script>
+      function add(a, b) {
+        retunr a + b;
+      }
+
+      function subtract(a, b) {
+        return a - b;
+      }
+
+      function sum(...args) {
+        let sum = 0;
+        for (let arg of args) sum += arg;
+        return sum;
+      }
+
+      function setTitle() {
+        document.getElementById("title").innerHTML = "Hello, this is Lab 2!";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1 id="title"> </h1>
+    <h2 id="student"> </h2>
+
+    <p>
+      Seconds since page loaded:
+    </p>
+  </body>
+</html>
