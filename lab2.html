@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> IT-2320 - Lab 1 </title>
+    <title> IT-2320 - Lab 2 </title>
 
     <script>
       function add(a, b) {
-        retunr a + b;
+        return a + b;
       }
 
       function subtract(a, b) {
         return a - b;
       }
-
+     
       function sum(...args) {
-        let sum = 0;
-        for (let arg of args) sum += arg;
-        return sum;
+        let total = 0;
+        for (let arg of args) total += arg;
+        return total;
       }
 
       function setTitle() {
         document.getElementById("title").innerHTML = "Hello, this is Lab 2!";
       }
+      
+      function studentName(name) {
+        document.getElementById("student").innerHTML = name;
+      }
+
+      let secondsSinceLoad = 0;
+
+      const updateSeconds = () => document.getElementById("seconds").innerHTML = ++secondsSinceLoad;
+
+      document.addEventListener("DOMContentLoaded", function() {
+        setTitle();
+        studentName("Angelica Alexis Hall");
+        setInterval(updateSeconds, 1000);
+          });
     </script>
   </head>
 
   <body>
-    <h1 id="title"> </h1>
-    <h2 id="student"> </h2>
-
-    <p>
-      Seconds since page loaded:
-    </p>
+    <h1 id="title"></h1>
+    <div id="student"></div>
+    <div id="seconds"></div>
+    
+    <script>  
+      document.writeln(add(10, 15));
+      document.writeln(subtract(45, 10));
+      document.writeln(sum(5, 10, 20, 30));
+    </script>
   </body>
 </html>
+
