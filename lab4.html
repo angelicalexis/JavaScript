@@ -1,0 +1,95 @@
+// question #1
+class Student {
+  constructor(name, major, gpa, classesTaken){
+    this.name = name;
+    this.major = major;
+    this.gpa = gpa;
+    this.classesTaken = classesTaken;
+  }
+  displayProperties() {
+    document.writeln("Name: " + this.name + "<br>");
+    document.writeln("Major: " + this.major + "<br>");
+    document.writeln("GPA: " + this.gpa + "<br>");
+    document.writeln("Classes Taken: " + this.classesTaken.join(", ") + "<br>");
+  }
+}
+
+const student1 = new Student(
+  "Angelica Hall", "Interactive Programming", 3.30, ["IT-1025", "IT-2310", "IT-1050"]
+);
+
+student.displayProperties();
+
+// question #2
+const course = {
+  courseId: "IT-2320",
+  title: "IT-2320",
+  crsDesc: "Interactive Internet Programming", 
+  creditHrs: "4",
+  displayCourse: function() {
+    document.writeln(this.courseId + "<br>");
+    document.writeln(this.title + "<br>");
+    document.writeln(this.crsDesc + "<br>");
+    document.writeln(this.creditHrs + "<br>");
+  }
+};
+
+course.displayCourse();
+
+// question #3
+const planet = {
+  name: "Mercury",
+  diameterMiles: 3031.9
+}
+
+planet.millMilesFromEarth = 48;
+
+document.writeln("Planet Name: " + planet.name + "<br>");
+document.writeln("Planet Diameter: " + planet.diameterMiles + "<br>");
+document.writeln("PlanetDistance from Earth: " + planet.millMilesFromEarth + "<br>");
+
+// question
+const favoriteLanguages = new Set(["JavaScript", "Python", "Swift", "Dart"])
+
+for(let language of favoriteLanguages) {
+  console.log(language);
+}
+ 
+// question #5
+const creditHrs = new Map ([
+  ["IT-1025", 3],
+  ["IT-1050", 3],
+  ["IT-2310", 3],
+  ["IT-2320", 4],
+  ["IT-2030", 4],
+  ["IT-2351", 4],
+  ["IT-2650", 4]
+]);
+
+document.writeln(creditHrs.get("IT-2030"));
+
+for (let [course, hours] of creditHrs) {
+  document.writeln(course + ": " + hours + "<br>");
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
