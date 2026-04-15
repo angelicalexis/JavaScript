@@ -18,25 +18,27 @@
 <span class="instructions"><b>Instructions:</b> Add JavaScript code to solve each problem below. Note that the script and HTML that you're going to interact with should be together right after the problem. Follow the instructions and use the DOM for each problem.</span>
 
 <div class="step"><b>Step 1</b> - Describe what the HTML Document Object Model is and at least 3 ways that you can use it.</div>
-
+DOM is the live browser that is an active representation or rendering of the HTML code. With DOM you can change the content of the webpage like text and images, change the styling of content on the webpage like color or font, and you can add and remove elements to the webpage.
 <div class="step"><b>Step 2</b> - Populate the content of element with id="studentName" with your first and last name using the document object and innerHTML property.</div>
 Name: <div id="studentName"></div>
 <script>
 // I put this here as an example. You should add a script element for each problem. Just make sure it comes after the HTML for the problem if you're not using an event.
 // Step 2 Solution:
-
+document.getElementById("studentName").innerHTML = "Angelica Alexis Hall";
 </script>
 
 <div class="step"><b>Step 3</b> - Set the innerHTML of the element with id="currDate" to the current date.</div>
 <div id="currDate"></div>
 <script>
 // Step 3 Solution:
+document.getElementById("currDate").innerHTML = Date();
 </script>
 
 <div class="step"><b>Step 4</b> - Change the font color for id="hello" to green using the style.color property.</div>
 <div id="hello">hello, world!</div>
 <script>
 // Step 4 Solution:
+document.getElementById("hello").style.color = "green";
 </script>
 
 <div class="step"><b>Step 5</b> - When a user clicks the button displaying the value "Click Me", change the value to "Clicked!" Use the clickMe() function. Attach it to the onclick event for the button.</div>
