@@ -42,18 +42,25 @@ document.getElementById("hello").style.color = "green";
 </script>
 
 <div class="step"><b>Step 5</b> - When a user clicks the button displaying the value "Click Me", change the value to "Clicked!" Use the clickMe() function. Attach it to the onclick event for the button.</div>
-<button id="btnClick">Click Me</button>
+<button id="btnClick" onclick="clickMe()">Click Me</button>
 <script>
 // Step 5 Solution:
 function clickMe() {
-
+  document.getElementById("btnClick").innerHTML = "Clicked!";
 }
 </script>
 
 <div class="step"><b>Step 6</b> - When a user scrolls their mouse over the element with id="mouseEvent", display mouseover! in the element. When the mouse is no longer over the element, it should go back to "No mouseover".</div>
-<div id="mouseEvent">No mouseover</div>
+<div id="mouseEvent" onmouseover="over()" onmouseout="out()">No mouseover</div>
 <script>
 // Step 6 Solution:
+function over(){
+  document.getElementById("mouseEvent").innerHTML = "mouseover!";
+}
+  
+function out(){
+  document.getElementById("mouseEvent").innerHTML = "No mousevoer";
+}
 </script>
 
 <div class="step"><b>Step 7</b> - Validate the form. Make sure both operands 1) have values, 2) are numeric, 3) are integers, and 4) are between 1 and 10 (include 1 or 10 as valid). You should check for each. If either of them are not valid, display an appropriate error message indicating which of the 4 criteria it does not meet (hint: you'll need an if statement) in the element with id='formError' and return false, so the form does not submit. If they are all valid, submit the form. Test with values '' and '', 'a' and 'b', 5.5 and 1.1, 11 and 12, 1 and 10.</div>
