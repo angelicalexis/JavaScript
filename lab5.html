@@ -59,13 +59,13 @@ function over(){
 }
   
 function out(){
-  document.getElementById("mouseEvent").innerHTML = "No mousevoer";
+  document.getElementById("mouseEvent").innerHTML = "No mouseover";
 }
 </script>
 
 <div class="step"><b>Step 7</b> - Validate the form. Make sure both operands 1) have values, 2) are numeric, 3) are integers, and 4) are between 1 and 10 (include 1 or 10 as valid). You should check for each. If either of them are not valid, display an appropriate error message indicating which of the 4 criteria it does not meet (hint: you'll need an if statement) in the element with id='formError' and return false, so the form does not submit. If they are all valid, submit the form. Test with values '' and '', 'a' and 'b', 5.5 and 1.1, 11 and 12, 1 and 10.</div>
 <span id="formError"></span>
-<form id="formAdd" method="get" action="sum.php">
+<form id="formAdd" method="get" action="sum.php" onsubmit="return checkForm()">
   <input type="text" name="op1" id="op1" value=""> + 
   <input type="text" name="op2" id="op2" value=""> &nbsp;&nbsp;
   <input type="submit" value="Add">
@@ -77,9 +77,9 @@ function checkForm() {
   let op2Value = document.getElementById("op2").value;
 
   let op1 = Number(op1Value);
-  let op2 = Number(op1Value);
+  let op2 = Number(op2Value);
   
-  if(op1 === "" || op2 === "") {
+  if(op1Value === "" || op2Value === "") {
     document.getElementById("formError").innerHTML = "Entry is empty!";
     return false;
   } 
@@ -87,11 +87,11 @@ function checkForm() {
     document.getElementById("formError").innerHTML = "Must enter a number!";
     return false;
   } 
-  if (!Number.isInteger(op1) || !Number.isInteger(:op2) {
-    document.getElementById("formError").innerHTML = "Must enter a valid number!";
+  if (!Number.isInteger(op1) || !Number.isInteger(op2)) {
+    document.getElementById("formError").innerHTML = "Must enter an integer!";
     return false;
   } 
-  if (op1 < 1 && op1 > 10 || op2 < 1 && op2 > 10){
+  if (op1 < 1 || op1 > 10 || op2 < 1 || op2 > 10){
     document.getElementById("formError").innerHTML = "Value must be between 1 and 10!";
       return false;
   } else {
@@ -103,11 +103,20 @@ function checkForm() {
 <div class="step"><b>Step 8</b> - Use getElementsByTagName to get all div elements. Use a for loop to loop through each element in the collection you retrieved. Add a style property to change the font color to green for each of the elements. Hint: this should change the instruction line for each problem to green.</div>
 <script>
 // Step 8 Solution:
+let div = document.getElementsByTagName("div");
+
+for(let i =0; i < div.length; i++){
+  div[i].style.color = "green";
+}
 </script>
 
 <div class="step"><b>Step 9</b> - Retrieve the body element and append a div element to the end of the body element with innerHTML set to 'The end...'</div>
 <script>
 // Step 9 Solution:
+let body = document.getElementsByTagName("body")[0];
+let newDiv = document.createElement("div");
+newDiv.innerHTML = "The end...";
+body.appendChild(newDiv);
 </script>
 
 
