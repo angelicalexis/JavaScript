@@ -73,6 +73,19 @@ function out(){
 <script>
 // Step 7 Solution:
 function checkForm() {
+  let op1 = document.getElementById("op1").value;
+  let op2 = document.getElementById("op2").value;
+  
+  if(op1 === "" || op2 === "") {
+    document.getElementById("formError").innerHTML = "Entry is empty!";
+    return fales;
+  } elif (isNaN(op1) || isNaN(op2)) {
+    document.getElementById("formError").innerHTML = "Must enter a number!";
+    return false;
+  } elif (Number.isInteger(Number(op1)) || Number.isInteger(Number(op2)) {
+    document.getElementById("formError").innerHTML = "Must enter a valid number!";
+    return false;
+  } elif (op1 <= 1 && op1 >= 10 || 
 
 }
 </script>
