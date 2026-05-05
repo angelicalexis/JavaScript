@@ -21,34 +21,28 @@
       
       // part 1
       const ajax = document.getElementById("ajax");
-      const req1 = new XMLHttpRequest();
+
+      function loadDoc(){
+        const req1 = new XMLHttpRequest();
+        req1.onload = function () {
+            ajax.innerHTML = req1.responseText;
+        };
       
-      req1.open("GET", "ajax.txt", true);
-      req1.onload = function () {
-        if (req1.status === 200) {
-          ajax.innerHTML = req1.responseText;
-        } else {
-          ajax.innerHTML = "AJAX error: " + req1.status;
-        }
+        req1.open("GET", "ajax.txt", true);
+        req1.send();
       };
 
-      req1.onerror = function () {
-        ajax.innerHTML = "AJAX request failed.";
-      };
-
-      req1.send();
+      loadDoc();
 
       // part 2
       const goGet = document.getElementById("fetch");
 
       fetch("fetch.txt")
         .then(response => response.text())
-        .then(text => {
-          goGet.innerHTML = text;
-        })
+        .then(text => goGet.innerHTML = text)
         
-        .catch(err => {
-          goGet.innerHTML = "Fetch error: " + err;
+        .catch(error => {
+          goGet.innerHTML = "Fetch error: " + error;
         });
       </script>
   </body>
