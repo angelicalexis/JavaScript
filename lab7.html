@@ -17,6 +17,10 @@
   Parse it to a JSON object called courseObj using JSON.parse().<br><br>Then, use the JavaScript object called courseObj to output the title using document.writeln().<br><br>
   <script>
   // Solution 1
+
+    const courseObj = JSON.parse('{"id": "IT-2320", "credits": 4, "title": "Interactive Internet Programming"}');
+    document.writeln(courseObj.title);
+    
   </script>
   </blockquote>
 </p>
@@ -27,6 +31,13 @@
   First, use JSON.parse() to parse it to a JavaScript array.<br><br>Then, create a loop to output each of the values in array using document.writeln() separated by a newline <br>.<br>
   <script>
   // Solution 2
+
+    const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';
+    const loop = JSON.parse(text);
+
+    for (let i = 0; i < loop.length; i++) {
+      document.writeln(loop[i] + "<br>");
+    }
   </script>
   </blockquote>
 </p>
@@ -36,6 +47,14 @@
   const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';<br><br>Use JSON.parse() to parse it to an object.<br><br>Use dot (.) notation to movidy the value of description to "An Introduction to JavaScript".<br><br>Use dot (.) notation to output all of the values using a single document.writeln() statement.<br><br>
   <script>
   // Solution 3
+
+    const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';
+    const obj = JSON.parse(myJSON);
+  
+    obj.description = "An Introduction to JavaScript";
+
+    document.writeln(obj.id + "<br>" + obj.credits + "<br>" + obj.title + "<br>" + obj.description + "<br>");
+
   </script>
   </blockquote>
 </p>
@@ -44,6 +63,24 @@
   <blockquote>Create an array (called courseArray) and JSON string (called courseJSON) with the following values: IT-1025, IT-2310, IT-2320.<br><br>Use any technique to output all of the values in both the array and JSON string.<br><br>In a comment, explain the technique used.<br><br>
   <script>
   // Solution 4
+
+    const courseArray = ["IT-1025", "IT-2310", "IT-2320"];
+    
+    const courseJSON = '["IT-1025", "IT-2310", "IT-2320"]';
+    const parsed = JSON.parse(courseJSON);
+
+    for (let i = 0; i < courseArray.length; i++) {
+      document.writeln(courseArray[i] + "<br>");
+    }
+
+    document.writeln("<br>");
+
+    for (let i = 0; i < parsed.length; i++) {
+      document.writeln(parsed[i] + "<br>");
+    }
+
+    // I created a JavaScript array and a JSON string with the given values. I then i used JSON.parse() to convert the JSON string into a JavaScript array. Then I used for loops to print the values from both arrays, with line breaks in between.
+    
   </script>
   </blockquote>
 </p>
@@ -52,6 +89,18 @@
   <blockquote>Using the "Array as JSON" example on https://www.w3schools.com/js/js_json_server.asp, read the values from courses.txt.<br><br>Output all of the values in the array.<br><br>
   <script>
   // Solution 5
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      const myArr = JSON.parse(this.responseText);
+      for (let i = 0; i < myArr.length; i++) {
+        document.writeln(myArr[i] + "<br>");
+      }
+    }
+    
+    xmlhttp.open("GET", "courses.txt", true);
+    xmlhttp.send();
+    
   </script>
   </blockquote>
 </p>
@@ -60,6 +109,16 @@
   <blockquote>Using the "JSON From a Server" example on https://www.w3schools.com/js/js_json_server.asp, request JSON from the file it1025.txt.<br><br>Output the value of title using a document.writeln().<br><br>
   <script>
   // Solution 6
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      const myObj = JSON.parse(this.responseText);
+      document.writeln(myObj.title);
+    };
+
+    xmlhttp.open("GET", "it1025.txt");
+    xmlhttp.send();
+    
   </script>
   </blockquote>
 </p>
